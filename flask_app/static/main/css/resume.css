@@ -1,0 +1,127 @@
+hr{
+    width: 80vw;
+}
+
+.name-city {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    margin-top: 5vh;
+    margin-left: 10vw;
+
+}
+
+
+.city-state{
+    margin-top: 5vh ;
+    margin-right: 10vw;
+}
+
+
+
+.title-date{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    margin: 0;
+    margin-left: 10vw;
+    font-size: 1.4em;
+}
+
+.start_date{
+    margin: 0;
+    margin-right: 10vw;
+}
+
+
+.responsibilities{
+    margin: 1vh;
+    margin-left: 10vw;
+}
+
+
+.exp-list{
+    margin-top: 5vh;
+    margin-left: 10vw;
+
+}
+
+
+
+.exp-l-item-p{
+    width: 75vw;
+    margin-bottom: .5vh;
+
+}
+
+.exp-l-item-a:link{
+    color:#0000EE;
+}
+
+.exp-l-item-a:visited{
+    color:#551A8B;
+}
+
+
+.skills-p{
+    margin-top:0;
+    font-size: .85em;
+}
+
+/*Adding responsiveness for smaller screens*/
+
+@media screen and (max-width:650px) {
+
+    hr{
+        margin-top: 4vh;
+        width: 90vw;
+    }
+
+    .name {
+        margin-top: 2vh;
+        margin-left: 5vw;
+        font-size: .91em;
+    
+    }
+
+    .city-state{
+        margin-top: 2vh;
+        margin-right: 5vw;
+        font-size: .8em;
+    }
+
+    .title{
+        margin: 0;
+        margin-left: 5vw;
+        font-size: .75em;
+    }
+
+    .start_date{
+        margin: 0;
+        margin-right: 5vw;
+        font-size: .6em;
+    }
+
+    .responsibilities{
+        margin: 1vh;
+        margin-left: 5vw;
+        font-size: .75em;
+    }
+
+    .exp-list{
+        margin-top: 3vh;
+        margin-left: 0vw;
+        font-size: .7em;
+        margin-bottom: 4vh;
+    
+    }
+
+    ul + hr{
+        margin-top: 0;
+    }
+    
+}

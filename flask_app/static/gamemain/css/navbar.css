@@ -1,0 +1,142 @@
+
+.navbar{
+    background-color: #6096B4; /* Dark background color */
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.navbar .regular li{
+    float:left;
+}
+
+.navbar .regular{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float:right;
+}
+
+.navbar a{
+    display: block;
+    padding: 1em;
+    font-size: 1em;
+    /*background-color: #F7B787; */ 
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    border-radius: .3em;
+    margin: 0 1vw;
+    
+}
+
+.navbar a:hover{
+    background-color: #93BFCF;
+    color: #FFFFFF;
+}
+
+
+.active {
+    background-color: #4CAF50;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* changes colors on click*/
+.navbar a:active{
+    background-color: #6096B4;
+    color:#f2f2f2;
+    border-radius: 5%;
+}
+
+/* hide the icon for when screen is longer than 350px*/
+.menu-icon{
+    display: none;
+}
+
+/* change opacity on hover*/
+.menu-icon:hover {
+    opacity: 0.4;
+
+}
+
+/* for transitioning the div element*/
+.menublock {
+    background-color: #6096B4;
+    position: absolute;
+    width: 100%;
+    top: 8vh;
+    height: 53.6vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10 ;
+}
+
+/* to open the dropdown menu*/
+#menu-checkbox {
+    display: none;
+}
+
+/* open the menu*/
+#menu-checkbox:checked + .menu-icon + .menublock {
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+.dropdown{
+    flex-direction: column;
+    width: 100%;
+}
+.dropdown li{
+    text-align: center;
+    padding: 1em;
+    border-bottom: 1px solid #f2f2f2; 
+}
+
+
+
+/*Adding responsiveness for smaller screens*/
+
+@media screen and (max-width:650px) {
+
+    /*hidden and button for dropdown menu instead*/
+    .navbar .regular {
+        display: none;
+    }
+
+    
+
+    .menu-icon{
+        display: block;
+        width: 15vw;
+        height: 8vh;
+        z-index: 20;
+        float: right;
+        margin-left: auto;
+        margin-right: 3%;
+
+
+    }
+
+    .menu-icon > img{
+        display: block;
+        width: 13vw;
+        height: 8vh;
+        float: right;
+        z-index: 20;
+        
+
+    }
+    
+}

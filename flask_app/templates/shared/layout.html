@@ -1,0 +1,155 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abel Diaz-Valdez</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="shortcut icon" href="../../static/main/images/favicon.ico">
+  <link rel="stylesheet" href="../../static/main/css/main.css">
+  <link rel="stylesheet" href="../../static/main/css/navbar.css">
+  <link rel="stylesheet" href="../../static/main/css/header.css">
+  <link rel="stylesheet" href="../../static/main/css/footer.css">
+  <link rel="stylesheet" href="../../static/piano/css/piano.css">
+
+  <script src="../../static/main/js/main.js" defer></script>
+  
+  {% block extracss %}
+
+  {% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header class="banner">
+      <img src="../../static/main/images/image_of_me.jpg" alt="banner" loading="lazy">
+    </header>
+
+    <!-- The navigation bar -->
+    <nav class="navbar">
+      {% if user != 'Unknown' %}
+        <p>Welcome {{user}}</p>
+      {% else %}
+        <p>Welcome to my personal Page</p>
+      {% endif %}
+      
+      <!-- Checkbox and label for a menu, responsive design to show or hide the navigation menu -->
+      <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+      <label for="menu-checkbox" class="menu-icon">
+          <img src="../static/main/images/menu-bar.png" alt="Menu" loading="lazy">
+      </label>
+
+      <!-- Dropdown Menu Section -->
+      <div class="menublock">
+        <ul class="dropdown">
+          <li><a class = "bars" href="../login.html" title="Login Page">Login</a></li>  
+          <li><a class = "bars" href="../home.html" title="Home Page">Home</a></li>
+          <li><a class = "bars" href="../projects.html" title="Abel's Projects">Projects</a></li>
+          <li><a class = "bars" href="../resume.html"  title="Abel's Resume">Resume</a></li>
+          <li><a class = "bars" href="/chat" title="Chat">Chat</a></li>    
+          {% if user != 'Unknown' %}
+          <li><a class = "bars" href="/logout" title="Logout">Logout</a></li>    
+          {% else %}
+          <li><a class = "bars" href="../login.html" title="Login Page">Login</a></li>    
+          {% endif %}
+          <li ><a class="linkedIn" href="https://www.linkedin.com/in/diaz-valdez/" target="_blank" title="LinkedIn - Abel Diaz-Valdez">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Regular Navigation Menu -->
+      <ul class="regular">
+        <li><a class = "bars" href="../home.html" title="Home Page">Home</a></li>
+        <li><a class = "bars" href="../projects.html" title="Abel's Projects">Projects</a></li>
+        <li><a class = "bars" href="../resume.html" title="Abel's Resume">Resume</a></li>
+        <li><a class = "bars" href="/chat" title="Chat">Chat</a></li>    
+        {% if user != 'Unknown' %}
+        <li><a class = "bars" href="/logout" title="Logout">Logout</a></li>    
+        {% else %}
+        <li><a class = "bars" href="../login.html" title="Login Page">Login</a></li>    
+        {% endif %}
+        <li class="linkedIn"><a href="https://www.linkedin.com/in/diaz-valdez/" target="_blank" title="LinkedIn - Abel Diaz-Valdez"><img src="../../static/main/images/social-linkedin.png" loading="lazy"></a></li>
+      </ul>
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      <!-- Add feedback content  -->
+      <div class="floating-contact-form">
+
+        <div class="form-container">
+          <!-- feedback title  -->
+          <h3>We'd love to hear your feedback!</h3>
+
+          <!-- for routes.py  -->
+          <form action="/processfeedback" method="post" autocomplete="off">
+
+            <!-- For name input -->
+            <div class="field-container">
+              <span class="fa-solid fa-signature"></span>
+              <label for="name">Name</label>
+              <input class="form-input" title="Enter a name" type="text" id="name" name="name">
+            </div>
+
+            <!-- For email input -->
+            <div class="field-container">
+              <span class="fa-solid fa-envelope"></span>
+              <label for="email">Email</label>
+              <input class="form-input" title="Enter an email" type="text" id="email" name="email">
+            </div>
+
+            <!-- For message input -->
+            <div class="field-container">
+              <span class="fa-regular fa-note-sticky"></span>
+              <label class="message-label" for="message">Message</label>
+              <textarea class="form-input" id="message" title="Enter a message" name="message" cols="30" rows="10"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <input type="submit" title="Send" value="Send"/> 
+
+
+          </form>
+
+        </div>
+
+        <div class="contact-icon">
+          <span class="fa-solid fa-comments" title="Feedback"></span>
+        </div>
+
+      </div>
+
+
+
+      {% block maincontent %}
+    
+      {% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer>
+      <p>© 2023 Abel Diaz-Valdez</p>
+    </footer>
+
+    </article>
+  
+
+  {% block extrajs %}
+  
+  {% endblock %}
+</body>
+
+</html>
+
+
+
+
+
+
+
+

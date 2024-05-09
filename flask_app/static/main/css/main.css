@@ -1,0 +1,362 @@
+
+/*No margin or padding and change font*/
+html, body{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Styling the first section with a grid layout and setting margins */
+.section_one{
+    display: grid;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 3%;
+    
+
+}
+
+/* Styling the paragraph inside section_one */
+.section_one p{
+    margin: 0;
+    overflow-y: scroll;
+    text-align:justify;
+    justify-content: center;
+    padding-right: 1.5rem;
+    max-height: 27rem;
+    
+
+}
+
+/* Styling links in section_one to inherit color from their parent elements */
+.section_one a, a:visited, a:hover, a:active{
+    color:inherit;
+
+}
+
+/* Styling span inside section_one */
+.section_one span{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* horizontal rule size */
+hr {
+    width: 60vw;
+}
+
+/* Styling my_picture ID */
+#my_picture{
+    width: 25vw;
+    height: auto;
+    min-width: 20rem;
+    min-height: 20rem;
+    border-color: #000000;
+    border: .2vw solid;
+}
+
+#Wordle{
+    width: 25vw;
+    height: auto;
+    min-width: 20rem;
+    min-height: 20rem;
+    border-color: #000000;
+    border: .2vw solid;
+    object-fit: contain;
+}
+
+
+
+/* Description Class Styles */
+.description p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Targeting every p element that is immediately preceded by another p element in the .description class */
+.description p+p{
+    font-size: 1rem;
+}
+
+/* Section Two Styles */
+.section_two p{
+    margin: 0;
+    text-align: center;
+}
+
+/* Section two styling */
+.section_two span{
+    font-size: 1.3rem;
+}
+
+/* Horizontal rule size */
+hr{
+    margin-top: 10vh;
+}
+
+/* Icon style setting */
+.floating-contact-form .contact-icon {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    cursor: pointer;
+    padding: 1.2em;
+
+}
+
+/* Icon color and transition */
+.floating-contact-form .contact-icon span {
+    font-size:2.5em;
+    color: #0077b8;
+    transition: all 300ms ease;
+}
+
+/* Change Icon size when hovering */
+.floating-contact-form .contact-icon span:hover{
+    transform: scale(1.1)
+}
+
+/* Placing the form on screen */
+.floating-contact-form .form-container {
+    position: fixed;
+    bottom: 20vh;
+    right: 25vw;
+    padding: 1em 1.5em;
+    width: 50vw;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 1em 1em rgba(0,0,0,0.1) ;
+    border-radius: 1.5em;
+
+    transform:translateX(150%);
+    transform-origin: bottom right;
+    opacity:0;
+    pointer-events: none;
+    transition: all 800ms ease;
+    background: #ffffff;
+
+}
+
+
+/* Styling the form when opeing */
+.floating-contact-form .form-container.active{
+    transform:translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Styling all of the contents the form */
+.floating-contact-form * {
+    box-sizing: border-box;
+}
+
+/* Header styling */
+.floating-contact-form h3{
+    font-size: 1.5em;
+    color: #0077b8;
+    margin-top: 2vh;
+    position: relative;
+    text-align: center;
+
+}
+
+
+/* Text styling */
+.floating-contact-form form input[type="text"],
+.floating-contact-form form textarea {
+    width: 100%;
+    padding: 1.2vh 10vw;
+    padding-left: 9%;
+    font-size: 1em;
+    border: 0.05em solid rgba(0,47,73,0.3);
+    border-radius: 0.5em;
+    color: #003049;
+    margin-bottom: 4%;
+
+}
+
+/* No outline when click on input field */
+.floating-contact-form form input:focus,
+.floating-contact-form form textarea:focus {
+    outline:none;
+}
+
+/* Positioning the fields */
+.floating-contact-form .field-container{
+    position:relative;
+    text-align: center;
+}
+
+/* Style for the labels */
+.floating-contact-form .field-container label{
+    position: absolute;
+    top: 1.4vh;
+    left: 9%;
+    color: #0077b8;
+    pointer-events: none;
+    transition: all 400ms ease;
+}
+
+/* Style when labels are active */
+.floating-contact-form .field-container label.active{
+    font-size: .5em; 
+    background: #ef233c;
+    color:#ffffff;
+    padding: .4% 2%;
+    top: -14%;
+    left: 3%;
+    border-left: 1em solid #ffffff;
+    border-right: 1em solid #ffffff;
+    font-weight: bold;
+}
+
+/* Style when message label is active */
+.floating-contact-form .field-container .message-label.active{
+    font-size: .5em; 
+    background: #ef233c;
+    color:#ffffff;
+    padding: .4% 2%;
+    top: -3%;
+    left: 2%;
+    border-left: 1em solid #ffffff;
+    border-right: 1em solid #ffffff;
+    font-weight: bold;
+}
+
+/* Icon style */
+.floating-contact-form .field-container span{
+    position: absolute;
+    top: 1.6vh;
+    left:3%;
+    color: #0077b8;
+}
+
+/* Message styling */
+.floating-contact-form form textarea {
+    height: 100%;
+    resize: none;
+}
+
+/* Submit button style */
+.floating-contact-form form input[type="submit"]{
+    align-self: center;
+    border: none;
+    background: #0077b8;
+    color: #ffffff;
+    padding: 2.4% 1%;
+    width: 100%;
+    border-radius: 1.2em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 500ms ease;
+
+} 
+
+/* Submit button style when hover */
+.floating-contact-form form input[type="submit"]:hover{
+    background: #33a7e6;
+}
+
+
+
+
+/* Media Query for screens with a maximum width of 650px */
+@media screen and (max-width:650px) {
+    /* Adjusting styles for section_one for smaller screens */
+    .section_one{
+        display: grid;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 10%;
+        margin-right: 10%;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto  ;
+        justify-content: center;
+        gap: 3%;    
+
+    }
+    /* Adjusting styles for my_picture ID for smaller screens */
+    #my_picture{
+        width: 50vw;
+        border-color: #000000;
+        border: .2vw solid;
+        margin: auto;
+        margin-top: 2.5vh;
+        margin-bottom: 1vh;
+
+
+        
+    }
+
+    /* Section one styling */
+    .section_one p{
+        margin: 0;
+        margin-top: 6%;
+        width: auto;
+        overflow-y:visible;
+        padding: 0;
+        max-height: fit-content;
+        
+        
+    }
+
+    /* Horizontal rule size */
+    hr {
+        margin-top: 5vh;
+        width: 85vw;
+    }
+
+
+    /* Placing the form on screen */
+    .floating-contact-form .form-container {
+        position: fixed;
+        bottom: 20vh;
+        right: 10vw;
+        padding: 1em 1.5em;
+        width: 80vw;
+        font-family: "Roboto", sans-serif;
+        box-shadow: 0 1em 1em rgba(0,0,0,0.1) ;
+        border-radius: 1.5em;
+    
+        transform:translateX(150%);
+        transform-origin: bottom right;
+        opacity:0;
+        pointer-events: none;
+        transition: all 800ms ease;
+        background: #ffffff;
+    
+    }
+
+    /* Style for the labels */
+    .floating-contact-form .field-container label{
+        position: absolute;
+        top: 1.4vh;
+        left: 11%;
+        color: #0077b8;
+        pointer-events: none;
+        transition: all 400ms ease;
+    }
+
+/* Text styling */
+    .floating-contact-form form input[type="text"],
+.floating-contact-form form textarea {
+    width: 100%;
+    padding: 1.2vh 10vw;
+    padding-left: 11%;
+    font-size: 1em;
+    border: 0.05em solid rgba(0,47,73,0.3);
+    border-radius: 0.5em;
+    color: #003049;
+    margin-bottom: 4%;
+
+}
+    
+
+
+    
+    
+}

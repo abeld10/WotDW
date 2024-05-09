@@ -1,0 +1,79 @@
+{% extends 'shared/gamelayout.html' %}
+
+{% block extracss %} 
+<link rel="stylesheet" href="../static/game/css/game.css">
+{% endblock %}
+
+{% block maincontent %}
+
+<h1 class="game-title">Welcome {{user}}</h1>
+
+<div id="timerDisplay" class="timer">00:00:00</div>
+
+
+<div class="error-message">Please enter a valid word</div>
+
+
+<div id="instructionModal" class="modal" data-show-instructions="{{ show_instructions | tojson }}">
+    <div class="modal-content">
+        <h2>Game Instructions</h2>
+        <p>Objective: Your goal is to guess the hidden word correctly. Each day, there's a new word to discover.
+            <ul>
+            <li>Daily Challenge: You have only one chance per day to be on the leaderboard. After your first game, the hidden word will be revealed to you.</li>
+            <li>You have as many tries as there are letters in the word to guess it correctly (example: 5 tries for a 5-letter word).</li>
+            <li>After each guess, the color of the tiles will change to show how close your guess was to the word.</li>
+            Tile Colors:
+            <li>Green: The letter is in the word and in the correct spot.</li>
+            <li>Yellow: The letter is in the word but in the wrong spot.</li>
+            <li>Grey: The letter is not in the word.</li>
+            <li>Timer: There's a timer running as soon as you start the game. Try to guess the word as quickly as possible!</li>
+            </ul>
+            
+            Please click "OK" to start the game and begin the timer. Good luck, and have fun!</p>
+        <button class="startGameBtn" id="startGameBtn">OK</button>
+    </div>
+</div>
+
+
+<div class="grid-container">
+    {% for row in range(gridSize) %}
+        <div class="grid-row">
+            {% for col in range(gridSize) %}
+                <div class="grid-cell" id="cell-{{ row }}-{{ col }}"></div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+
+
+<div class="keyboard-container">
+    <div class="keyboard-row">
+        {% for letter in "QWERTYUIOP" %}
+            <button class="key" id="key-{{ letter }}">{{ letter }}</button>
+        {% endfor %}
+    </div>
+    <div class="keyboard-row">
+        {% for letter in "ASDFGHJKL" %}
+            <button class="key" id="key-{{ letter }}">{{ letter }}</button>
+        {% endfor %}
+    </div>
+    <div class="keyboard-row">
+        <button class="key key-large">Enter</button>
+        {% for letter in "ZXCVBNM" %}
+            <button class="key" id="key-{{ letter }}">{{ letter }}</button>
+        {% endfor %}
+        <button class="key key-large">Backspace</button>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block extrajs %}
+<script src="../static/game/js/game.js" defer></script>
+{% endblock %}

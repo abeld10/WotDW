@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Login form */
+.wrapper {
+    width:40vw;
+    background: #ffffff;
+    color: #0077b8;
+    padding: 4vh 5vw;
+    border-radius: 1.5rem;
+    border: 1em solid rgba(255,255,255,.2);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 0 1em rgba(0,0,0,.2);
+    
+}
+
+/* Title */
+.wrapper h1{
+    font-size: 2rem;
+    text-align: center;
+    color: #0077b8;
+
+}
+
+/* Input style */
+.wrapper .input-box {
+    width: 100%;
+    height: 6vh;
+    margin: 2.5vh 0;
+    position: relative;
+}
+
+/* Input style */
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: .06rem solid rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: #0077b8;
+    padding: 2vh 4vw 2vh 1vw;
+
+}
+
+.input-box input::placeholder {
+    color: #0077b8;
+}
+
+/* Icon style */
+.input-box i {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+
+}
+
+
+
+#loginbtn{
+    margin-top: 2.2vh;
+}
+
+/* Button style */
+.wrapper .btn {
+    width: 100%;
+    height: 5vh;
+    background: #0077b8;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+    box-shadow:0 0 1rem  rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 1vh 0;
+
+}
+
+
+
+.input-box.success input {
+    border-color: #09c372;
+}
+
+.input-box.error input {
+    border-color: #ff3860;
+}
+
+.input-box .error {
+    color: #ff3860;
+    font-size: .8rem;
+    margin-top: .2vh;
+    
+}
+
+
+/*Adding responsiveness for smaller screens*/
+
+@media screen and (max-width:650px) {
+
+    .wrapper {
+        width:90vw;       
+   }
+    
+}

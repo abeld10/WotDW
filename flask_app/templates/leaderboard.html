@@ -1,0 +1,49 @@
+{% extends 'shared/gamelayout.html' %}
+
+{% block extracss %} 
+<link rel="stylesheet" href="../static/leaderboard/css/leaderboard.css">
+{% endblock %}
+
+
+
+
+
+
+{% block maincontent %}
+<h1 class="leaderboard-title">Leaderboard</h1>
+{% if has_played == "True" %}
+    <p id="hidden-word">Today's hidden word was: {{ hidden_word }}</p>
+{% endif %}
+
+<div class="leaderboard-container">
+    <div class="header">
+        <div class="ranking"><h2>#</h2></div>
+        <div class="username"><h2>User</h2></div>
+        <div class="time"><h2>Best Time</h2></div>
+    </div>
+    <div class="players">
+        {% for player in format_results %}
+            <div class="player">
+                <div class="ranking"><p>{{ loop.index }}</p></div>
+                <div class="username"><p>{{ player.User }}</p></div>
+                <div class="time"><p>{{ player.best_time }}</p></div>
+            </div>
+        {% endfor %}
+
+        
+        
+    </div>
+    
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block extrajs %}
+<script src="../static/leaderboard/js/leaderboard.js" defer></script>
+{% endblock %}

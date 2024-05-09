@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WotDWordle - Wordle But It's Word of the Day</title>
+    <link rel="icon" type="image/x-icon" href="../../static/gamemain/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/gamemain/css/main.css">
+    <link rel="stylesheet" href="../../static/gamemain/css/navbar.css">
+    <link rel="stylesheet" href="../../static/gamemain/css/footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    
+    {% block extracss %}
+    {% endblock %}
+</head>
+<body>
+    <!-- 
+    {% if user != 'Unknown' %}
+    <p>Welcome {{user}}</p>
+    {% else %}
+      <p>Welcome to WoTDWordle!</p>
+    {% endif %}-->
+    <!-- The navigation bar -->
+    <nav class="navbar">
+  
+  
+        <!-- Regular Navigation Menu -->
+        <ul class="regular">
+          <li><a class="bars" href="/" title="Personal Page">Personal Page</a></li>
+          {% if user != 'Unknown' %}
+          <li><a id="logout-btn" class = "bars" href="/gamelogout" title="Logout">Logout</a></li>    
+          {% else %}
+          <li><a class = "bars" href="/gamelogin" title="Login Page">Login</a></li>    
+          {% endif %}
+          <li><a class = "bars" href="/game" title="Game Page">Play</a></li>
+          <li><a class="bars" href="/leaderboard" title="Leaderboard Page">Leaderboard</a></li>      
+        </ul>
+
+
+        <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+        <label for="menu-checkbox" class="menu-icon">
+            <img src="../../static/gamemain/images/menu-bar.png" alt="Menu" loading="lazy">
+        </label> 
+
+        <!-- Dropdown Menu Section -->
+      <div class="menublock">
+        <ul class="dropdown">
+          <li><a class="bars" href="/" title="Personal Page">Personal Page</a></li>
+          {% if user != 'Unknown' %}
+          <li><a id="logout-btn" class = "bars" href="/gamelogout" title="Logout">Logout</a></li>    
+          {% else %}
+          <li><a class = "bars" href="/gamelogin" title="Login Page">Login</a></li>    
+          {% endif %}
+          <li><a class = "bars" href="/game" title="Game Page">Play</a></li>
+          <li><a class="bars" href="/leaderboard" title="Leaderboard Page">Leaderboard</a></li>
+        </ul>
+      </div>
+
+
+        
+      </nav>
+
+
+
+      
+    
+
+
+    <main>      
+          
+
+
+    {% block maincontent %}
+
+    {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2023 WotDWordle - Created by Abel Diaz-Valdez</p>
+    </footer>
+
+    {% block extrajs %}
+  
+    {% endblock %}
+</body>
+</html>

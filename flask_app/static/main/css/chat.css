@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.chat-container {
+    width: 40vw;
+    margin: auto;
+    margin-top: 5vh;
+    padding: 2%;
+}
+
+/* Chat window style */
+.chat-window {
+    height: 33vh;
+    border: .1rem solid #0077b8;
+    margin-bottom: 2vh;
+    padding: 2%;
+    overflow-y: scroll;
+    border-radius: 1em;
+
+}
+
+/* Input form style */
+#message-input {
+    width: 38.5vw;
+    padding: 1.5%;
+    margin-bottom: 2vh;
+    border-radius: 1em;
+
+}
+
+/* Button style */
+#send-button {
+    width: 40vw;
+    padding: 2%;
+    margin-bottom: 1vh;
+    color: #ffffff ;
+    background-color: #0077b8;
+    border-radius: 1em;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Button style */
+#leave-button {
+    width: 40vw;
+    padding: 2%;
+    color: #ffffff ;
+    background-color: #0077b8;
+    border-radius: 1em;
+    cursor: pointer;
+    font-weight: 600;
+
+
+}
+
+/* Messaging styles */
+.message {
+    padding: 1vw;
+    margin: 1vw;
+}
+
+.owner-message {
+    color: #0000ff;
+    text-align: right;
+}
+
+.other-message {
+    color: grey;
+    text-align: left;
+}
+
+
+/* Style for small screens */
+@media screen and (max-width:650px) {
+
+    
+    .chat-container {
+        width: 90vw;
+    }
+    #message-input {
+        width: 86vw;
+        padding: 2%;
+
+    
+    }
+
+    #send-button {
+        width: 90vw;
+        padding: 5%;
+
+        
+    }
+    
+    #leave-button {
+        width: 90vw;
+        padding: 5%;
+
+    
+    }
+
+}

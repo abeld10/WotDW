@@ -1,0 +1,23 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+  <link rel="stylesheet" href="../static/main/css/feedback.css">
+{% endblock %}
+
+{% block maincontent %}
+    <h3 class="title">Thank you for your feedback - Here's what others had to say:</h3>
+
+      <!-- For  - generate a row --> 
+      {% for comment_id, feed_dict in form_data.items() %}
+      <!-- Do something... -->
+      <div class="name-comment">
+        <p class="name">{{feed_dict['name']}} said: </p>
+        <p class="comment"> {{feed_dict['comment']}}</p>
+    </div>
+       
+      {% endfor %}
+
+
+
+
+{% endblock %}

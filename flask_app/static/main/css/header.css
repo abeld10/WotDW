@@ -1,0 +1,13 @@
+
+/* banner size and overflow style*/
+.banner{
+    max-height: 15vh;
+    overflow: hidden;
+}
+
+/*banner image size and display type*/
+.banner img{
+    width: 100%;
+    height: auto;   
+    display: block;
+}

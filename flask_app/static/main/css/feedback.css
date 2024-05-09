@@ -1,0 +1,20 @@
+.title{
+    text-align: center;
+}
+
+.name-comment {
+    display: flex;
+    margin: 0vh 5vw;
+    padding:0;
+}
+
+.name {
+    margin: 2vh 0vw;
+
+}
+
+.comment{
+    margin: 2vh .5vw;
+}
+
+

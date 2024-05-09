@@ -1,0 +1,257 @@
+
+/* Global Style */
+/* Removing margin and padding and setting a global font family for every element under html and body tags */
+html body{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+
+
+/* Poem Styles */
+/* Styling the paragraph inside the element with a class of .poem */
+.poem > p{
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* Outer Div Styles */
+/* Styling the outer div which wraps the piano keys */
+.outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 80vh;
+    background-color: #2c2c2c;
+    margin: auto;
+    border-top-left-radius: 8em;
+    border-top-right-radius: 8em;
+    overflow: hidden;
+    
+}
+
+
+/* Styling the h2 inside the .outer element */
+.outer h2{
+    color:#ffffff;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 1vh;
+    margin-top: 0;
+}
+
+/* Keys and Key Styles */
+/* Styling the .keys element which contains the piano keys */
+.keys{
+    display: flex;
+    white-space: nowrap;   
+    padding: 0; 
+}
+
+/* Styling each key inside .keys */
+.keys .key{
+  color: #ffffff;  
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  
+}
+
+/* Specific styles for white keys */
+.keys .white{
+    width: 3rem;
+    height: 50vh;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    border-radius: .4em;
+    
+}
+
+/* Specific styles for black keys */
+.keys .black{
+    width: 2rem;
+    height: 30vh;
+    background-color: #000000;
+    border-radius: .4em;
+    margin: 0 -22px 0 -22px;
+    z-index: 2;
+}
+
+/* Span inside keys */
+.keys span{
+    display: none;
+    position:absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333333;
+}
+
+
+/* Styles when key is pressed */
+.pressed{
+    background-color: #444444 !important;
+}
+
+
+.keys .white:active{
+    
+    opacity: .4;
+
+}
+
+.keys .black:active{
+    background-color: #444444;
+}
+
+
+
+
+/* Styles for awakened state */
+.awakenWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 80vh;
+    margin: auto;
+    border-top-left-radius: 8em;
+    border-top-right-radius: 8em;
+    overflow: hidden;
+    
+}
+/* Styles for awakened state */
+.awakenImage {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 80vh;
+    background-color: #2c2c2c;
+    margin: auto;
+    border-top-left-radius: 8em;
+    border-top-right-radius: 8em;
+}
+
+/* Styles for awakened state */
+.awakenText{
+    position: absolute;
+    color:#ffffff;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-style: italic;
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+@media screen and (max-width: 650px) and (orientation:portrait  )  {
+ 
+    .keys{
+        width: 90vw;
+        padding-left: 0;
+        padding-right: 0; 
+        justify-content: space-between;   
+        
+    }
+    
+    .outer{
+        width: 95vw;
+        overflow-x: scroll;  
+
+          
+    }
+    .keys .white{
+        width: 12vw;
+        height: 40vh;
+        margin-right: 0.5vw;  /* Adjust to your preference */
+        border: .3rem solid #000000;
+        border-radius: .4em;
+        padding: 0;
+    }
+    .keys .black{
+        width: 11vw;
+        height: 20vh;
+        border: .1rem solid #000000;
+        border-radius: .4em;
+        margin-right: -3.5vw;   /* This should be roughly half of the white key's width minus black key's width */
+        margin-left: -4.5vw; 
+        padding: 0;
+        
+    }
+
+
+
+    /* Styles when key is pressed */
+    .pressed{
+        background-color: #444444 !important;
+    }
+
+
+        /* Span inside keys */
+    .keys span{
+        display: visible;
+        position:absolute;
+        bottom: 20px;
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        color: #333333;
+    }
+
+
+        /* Styles for awakened state */
+    .awakenWrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 80vh;
+        margin: auto;
+        border-top-left-radius: 8em;
+        border-top-right-radius: 8em;
+        overflow: hidden;
+    
+    }
+    /* Styles for awakened state */
+    .awakenImage {
+        align-items: center;
+        justify-content: center;
+        width: 133.33vw;
+        height: 80vh;
+        background-color: #2c2c2c;
+        margin: 0;
+        border-top-left-radius: 8em;
+        border-top-right-radius: 8em;
+    }
+
+    /* Styles for awakened state */
+    .awakenText{
+        position: absolute;
+        color:#ffffff;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-style: italic;
+        text-align: center;
+        font-size: 2.2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    }
+
+
+
+
+
+}   
+

@@ -1,0 +1,68 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block extracss %}
+  <link rel="stylesheet" href="../static/main/css/resume.css">
+{% endblock %}
+
+
+{% block maincontent %}
+  
+  <hr>
+
+      <!-- For each institution - generate a row --> 
+      {% for inst_id, inst in resume_data.items() %}
+      <!-- Do something... -->
+      <div class="name-city">
+        <h1 class="name">{{ inst['name']}}</h1>
+        <p class="city-state">{{ inst['city']}}, {{ inst['state']}}</p>
+      </div>
+        {% if inst['positions'] != {} %}
+          {% for pos_id, pos in inst['positions'].items() %}
+          <!-- Do something else... -->
+          <div class="title-date">
+            <p class="title">{{ pos['title']}} </p>
+            <!--Add the end_date... -->
+            {% if pos['end_date'] == None %}
+              <p class="start_date">{{ pos['start_date']}} - Present</p>
+
+            {% else %}
+              <p class="start_date">{{ pos['start_date']}} - {{ pos['end_date']}}</p>
+            {% endif %}
+          </div>
+          <p class="responsibilities">{{ pos['responsibilities']}}</p>
+          {% if pos['experiences'] != {} %}
+            {% for exp_id, exp in pos['experiences'].items()%}
+            <ul class="exp-list">
+              <!--Add logic if exp has a hyperlink or hyperlink is None... -->
+              {% if exp['hyperlink'] != None %}
+                <li class="exp-l-item"><p class="exp-l-item-p"><a class="exp-l-item-a" title="{{exp['name']}}" href="{{exp['hyperlink']}}">{{ exp['name']}}:</a> {{exp['description']}}</p></li>
+                {% else %}
+                  <li class="exp-l-item"><p class="exp-l-item-p">{{ exp['name']}}: {{exp['description']}}</p></li>
+              {% endif %}
+              <!--Add logic if skills or skills is empty-->
+              {% if exp['skills']%}
+                  <p class="skills-p">Skills used: 
+                  {%for skill_id, skill in exp['skills'].items()%}
+                  {{skill['name']}}{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                  </p>
+                {% endif %}
+
+            </ul>
+
+            {% endfor %}
+          {% endif %}
+
+          
+          {% endfor %}
+        {% endif %}
+
+      <hr>
+      {% endfor %}
+
+
+
+{% endblock %}
+
+

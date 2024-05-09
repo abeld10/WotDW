@@ -1,0 +1,39 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="poem">
+  <p>Behold piano great and old, it's master slumbers in far off
+    cold, if you wish to see anew, call out to it - we see you.
+  </p>
+</div>
+
+
+<div class="outer">
+    <h2>The Great Old One</h2>
+
+    <!-- section to create piano keys -->
+    <ul class="keys">
+        <li class="key white" id="a"><span>A</span></li>
+        <li class="key black" id="w"><span>W</span></li>
+        <li class="key white" id="s"><span>S</span></li>
+        <li class="key black" id="e"><span>E</span></li>
+        <li class="key white" id="d"><span>D</span></li>
+        <li class="key white" id="f"><span>F</span></li>
+        <li class="key black" id="t"><span>T</span></li>
+        <li class="key white" id="g"><span>G</span></li>
+        <li class="key black" id="y"><span>Y</span></li>
+        <li class="key white" id="h"><span>H</span></li>
+        <li class="key black" id="u"><span>U</span></li>
+        <li class="key white" id="j"><span>J</span></li>
+        <li class="key white" id="k"><span>K</span></li>
+        <li class="key black" id="o"><span>O</span></li>
+        <li class="key white" id="l"><span>L</span></li>
+        <li class="key black" id="p"><span>P</span></li>
+        <li class="key white" id=";"><span>;</span></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+  <script src="../../static/piano/js/piano.js" defer></script>
+{% endblock %}

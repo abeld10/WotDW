@@ -1,0 +1,41 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<div class="description">
+    <!-- Paragraph tags describing the content of the main section -->
+    <p>Below is a list of projects I worked on in CSE 477:</p>
+    <p>Click an image, or hyperlink in the description to learn more.</p>
+</div>
+
+<!-- Horizontal rule for separating content visually -->
+<hr />
+
+<!-- Div for the section containing project details -->
+<div class="section_one">
+    <!-- Anchor tag wrapping an image, making the image clickable and leading to a different page -->
+    <a href="./piano.html"><img id="my_picture" src="../static/main/images/piano.jpeg" alt="Image of a Piano" loading="lazy" title="Image of a Piano"></a>
+    <p>
+        <!-- Span and anchor tag inside paragraph for project description and navigation to project -->
+        <span>Javascript Piano</span><br />
+        As part of my first Homework assignment in CSE477, I developed an interactive piano built in pure HTML, CSS, and Javascript.
+        This tool (in addition to my webpage) highlights my ability to build beautiful and mobile-friendly front-end applications.
+        <a href="./piano.html">Click here to see and play!</a>
+    </p>
+
+    
+
+    <a href="/gamelogin"><img id="Wordle" src="../static/main/images/wotdwordle.png" alt="Image of my game" loading="lazy" title="Image of my Game"></a>
+    <p>
+        <!-- Span and anchor tag inside paragraph for project description and navigation to project -->
+        <span >Word of the Day Wordle</span><br />
+        As part of my final project in CSE477, I developed a full-stack Wordle game built in HTML, CSS, and Javascript and Flask as the backend.
+        <a href="/gamelogin">Click here to see and play!</a>
+    </p>
+
+    
+</div>
+
+<!-- Another horizontal rule for visual separation -->
+<br />
+<hr />
+{% endblock %}

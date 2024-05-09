@@ -1,0 +1,189 @@
+
+
+main > p{
+    text-align: center;
+    color: #6096B4;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    margin-bottom: 7.5vh;
+}   
+
+
+
+.form-box{
+    width: 30vw;
+    min-height: 40vh;
+    text-align: center;
+    color: #000000;
+    padding: 3vh 2vw;
+    border-radius: .5rem;
+    border: 1em solid rgba(255,255,255,.2);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 0 1em rgba(0,0,0,.2); 
+
+
+}
+
+
+@keyframes fadeOpacity {
+    0%   { opacity: 0.6; }
+    50%  { opacity: 0.85; }
+    100% { opacity: 1; }
+}
+
+
+.form-box h1{
+    font: 1.3em;
+    margin-bottom: 4vh;
+    color: #6096B4;
+    position: relative;
+    opacity: 1;
+    animation: fadeOpacity 1s ease-in-out;
+
+
+}
+
+
+.form-box h1::after{
+    content: '';
+    width: 4vw;
+    height: .7vh;
+    border-radius: .1em;
+    background: #6096B4;
+    position: absolute;
+    bottom: -2vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.input-field {
+    background: #eaeaea;
+    margin: 2vh 0;
+    border-radius: 5em;
+    display: flex;
+    flex-direction: stretch;
+    align-items: center;
+    max-height: 30vh;
+    overflow: hidden;
+
+}
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 2vh 1vw;
+
+}
+
+.input-field i{
+    margin-left: 1vw;
+    margin-right: .2vw;
+    color: #6096B4;
+}
+
+.input-field input{
+    color: #555;
+    display: block;
+    width: 100%;
+}
+
+form p{
+    text-align: left;
+    font-size: .8em;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+form p a{
+    text-decoration: none;
+    color: #6096B4;
+
+}
+
+.btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-field button{
+    flex-basis: 48%;
+    background: #6096B4;
+    color: #FFFFFF;
+    height: 5vh;
+    border-radius: 5em;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.btn-field button:hover{
+    background:#93BFCF;
+}
+
+.input-group{
+    min-height: 25vh;
+    
+}
+
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+}
+
+.btn-field button.disable:hover{
+    background: #aaaaaa;
+}
+
+
+
+
+.input-group.success input {
+    border-color: #09c372;
+}
+
+.input-group.error input {
+    border-color: #ff3860;
+}
+.input-group.error2 input {
+    border-color: #ff3860;
+}
+
+.input-group .error {
+    display: block;
+    color: #ff3860;
+    font-size: .8em;
+    margin-top: .2vh;
+    
+}
+.input-group .error2 {
+    display: block;
+    color: #ff3860;
+    font-size: .8em;
+    margin-top: .2vh;
+    
+}
+
+.error .error2{
+    overflow: hidden;
+}
+
+
+/*Adding responsiveness for smaller screens*/
+
+@media screen and (max-width:650px) {
+
+    .form-box{
+        width:80vw;       
+   }
+    
+}

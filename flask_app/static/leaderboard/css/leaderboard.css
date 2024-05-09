@@ -1,0 +1,62 @@
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%; 
+    margin: auto; 
+    background-color: #f8f8f8; 
+    border-radius: .8em; 
+    box-shadow: 0 .6em .8em rgba(0, 0, 0, 0.1); 
+    padding: 3%;
+    box-sizing: border-box;
+    margin-bottom: 15vh;
+}
+
+.leaderboard-title {
+    text-align: center;
+    color:#6096B4;
+    margin-bottom: 20px;
+}
+
+.header, .player {
+    display: flex;
+    justify-content: space-between;
+    padding: 4vh 3vw;
+    color:#6096B4;
+
+}
+
+.header {
+    border-bottom: .1em solid #eaeaea; 
+    margin-bottom: 1vh;
+}
+
+.player:hover {
+    background-color: #eaeaea; 
+}
+
+.ranking, .username, .time {
+    flex: 1; /* Equal width */
+    text-align: center;
+
+}
+
+.player{
+    font-weight: 600;
+}
+
+#hidden-word{
+    text-align: center;
+    color:#6096B4;
+    margin-bottom: 1em;
+    font-size: 1.4em;
+}
+
+
+
+@media screen and (max-width:650px) {
+
+.leaderboard-title{
+    font-size: 4em;
+}
+
+}
