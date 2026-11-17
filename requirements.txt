@@ -2,7 +2,7 @@ flask
 gunicorn
 cryptography
 flask-socketio
-eventlet==0.30.2
+eventlet==0.40.3
 Flask-Failsafe
 mysql-connector-python
 python-dotenv
